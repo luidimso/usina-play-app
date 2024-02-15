@@ -7,6 +7,9 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { HeaderComponent } from '../components/header/header.component';
 
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
+import { CardComponent } from '../components/card/card.component';
+
 
 @NgModule({
   imports: [
@@ -15,6 +18,7 @@ import { HeaderComponent } from '../components/header/header.component';
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage, HeaderComponent]
+  declarations: [HomePage, HeaderComponent, CardComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomePageModule {}

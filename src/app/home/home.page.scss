@@ -1,27 +1,33 @@
-#container {
-  text-align: center;
+$primary-color: #F07D07;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+ion-content {
+  --ion-background-color: #090909;
+  --color: white;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+h2 {
+  margin: 50px 25px 0 25px;
+  font-weight: 600;
+  padding: 3px;
+
+  div {
+    font-size: 0.3em;
+    background-color: $primary-color;
+    display: inline-flex;
+    padding: 3px;
+    border-radius: 10px;
+    vertical-align: middle;
+  }
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px;
 }
 
-#container a {
-  text-decoration: none;
+.card-content {
+  width: 100%;
+  height: 100px;
+  margin: 10px;
 }

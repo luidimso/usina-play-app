@@ -1,14 +1,20 @@
 <app-header [user]="user"></app-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <h2>PERSONAL ONLINE</h2>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="card-list">
+    <div class="card-content" *ngFor="let program of programs | async" >
+      <app-card [program]="program" [background]="background"></app-card>
+    </div>
   </div>
+
+  <h2>PROGRAMAS <div *ngIf="hasNewProgram">NOVO</div></h2>
+
+  <div class="card-list">
+    <div class="card-content" *ngFor="let program of programs | async" >
+      <app-card [program]="program" [background]="background"></app-card>
+    </div>
+  </div>
+  
 </ion-content>
