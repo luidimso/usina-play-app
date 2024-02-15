@@ -1,23 +1,23 @@
-<header>
-  <div>
+<header *ngIf="user">
+  <div class="logo-bar">
     <ion-icon name="barbell-sharp"></ion-icon>
   </div>
 
-  <div>
+  <div class="profile">
     <ion-icon name="person-circle-sharp"></ion-icon>
     <div>
-      <h4>{{user?.nome}}</h4>
-      <p>{{user?.levelName}}</p>
+      <h4>{{user.nome}}</h4>
+      <p [style.color]="user.levelColor ? user.levelColor : 'white'">Nível {{user.levelName}}</p>
     </div>
   </div>
 
-  <div>
-    <div>
+  <div class="options-bar">
+    <div id="first">
       <ion-icon name="body-sharp"></ion-icon>
       <span>MEU CORPO</span>
     </div>
 
-    <div>
+    <div id="second">
       <ion-icon name="trophy-sharp"></ion-icon>
       <span>OBJETIVOS E CONQUISTAS</span>
     </div>

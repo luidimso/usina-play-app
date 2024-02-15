@@ -9,7 +9,9 @@ import { User } from '../models/user,interface';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-  private users: Observable<User> = this.userService.getUserById("Qc8chmCKIo0KPkzZDDeU");
+  public userId:string = "Qc8chmCKIo0KPkzZDDeU";
+
+  private users: Observable<User> = this.userService.getUserById(this.userId);
   public user: User;
 
   constructor(

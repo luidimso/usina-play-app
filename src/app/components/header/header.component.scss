@@ -1,0 +1,51 @@
+$primary-color: #F07D07;
+
+header {
+    background-color: #202020;
+    padding: 10px 30px;
+    border-radius: 0px 0px 40px 40px;
+}
+
+.logo-bar, .profile, .options-bar {
+    display: flex;
+}
+
+.logo-bar {
+    justify-content: center;
+    color: white;
+    font-size: 3em;
+}
+
+.profile {
+    ion-icon {
+        font-size: 5em;
+        color: $primary-color;
+        margin-right: 10px;
+    }
+
+    h4 {
+        font-weight: 600;
+        color: white;
+        margin-bottom: 0px;
+    }
+
+    p {
+        font-weight: 600;
+        margin-top: 5px;
+    }
+}
+
+.options-bar {
+    color: $primary-color;
+    font-size: 0.7em;
+    margin-top: 20px;
+    background-color: #161616;
+    padding: 10px 20px;
+    border-radius: 20px;
+    white-space: nowrap;
+    justify-content: center;
+
+    #second {
+        margin-left: 10px;
+    }
+}
