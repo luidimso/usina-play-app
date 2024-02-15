@@ -4,6 +4,7 @@ import { UsersService } from '../services/users.service';
 import { User } from '../models/user,interface';
 import { Program } from '../models/program.interface';
 import { ProgramsService } from '../services/programs.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -23,7 +24,8 @@ export class HomePage implements OnInit {
   
   constructor(
     private userService: UsersService,
-    private programService: ProgramsService
+    private programService: ProgramsService,
+    private alertCtrl: AlertController
   ) {}
 
   ngOnInit(): void {
@@ -45,5 +47,40 @@ export class HomePage implements OnInit {
       })
     });
   }
+  
 
+  async addProgram() {
+    const alert = await this.alertCtrl.create({
+      header: 'Criar um novo programa',
+      inputs: [
+        {
+          name: 'nome',
+          placeholder: 'Nome do programa',
+          type: 'text'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel'
+        }, {
+          text: 'Criar',
+          handler: res => {
+            if(res.nome) {
+              const date = new Date().toISOString();
+              const body:Program = {
+                createdAt: date,
+                nome: res.nome,
+                status: "Novo"
+              }
+
+              this.programService.addProgram(body);
+            };
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
 }

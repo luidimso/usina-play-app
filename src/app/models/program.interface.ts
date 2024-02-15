@@ -1,5 +1,5 @@
 export interface Program {
-    id: string;
+    id?: string;
     nome: string;
     status: string | null;
     createdAt: string
