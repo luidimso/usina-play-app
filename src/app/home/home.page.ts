@@ -9,14 +9,17 @@ import { User } from '../models/user,interface';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-  private user: Observable<User> = this.userService.getUserById("Qc8chmCKIo0KPkzZDDeU");
+  private users: Observable<User> = this.userService.getUserById("Qc8chmCKIo0KPkzZDDeU");
+  public user: User;
 
   constructor(
     private userService: UsersService
   ) {}
 
   ngOnInit(): void {
-    console.log(this.user);
+    this.users.subscribe(u => {
+      this.user = u;
+    });
   }
 
 }
