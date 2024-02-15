@@ -1,12 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { UsersService } from '../services/users.service';
+import { User } from '../models/user,interface';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
+  private user: Observable<User> = this.userService.getUserById("Qc8chmCKIo0KPkzZDDeU");
 
-  constructor() {}
+  constructor(
+    private userService: UsersService
+  ) {}
+
+  ngOnInit(): void {
+    console.log(this.user);
+  }
 
 }

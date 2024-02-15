@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ioni2-chat": {
+      "hosting": {
+        "app": [
+          "ioni2-chat"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ioni2-chat"
+  }
+}
