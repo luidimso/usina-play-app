@@ -1,7 +1,19 @@
-<header *ngIf="user">
-  <div class="logo-bar">
-    <ion-icon name="barbell-sharp"></ion-icon>
-  </div>
+<ion-header *ngIf="user">
+  <ion-toolbar>
+    <ion-buttons slot="start" class="header-btns">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons> 
+
+    <ion-title class="logo ion-text-center">
+      <ion-icon name="barbell-sharp"></ion-icon>
+    </ion-title>
+
+    <ion-buttons slot="primary">
+      <ion-button fill="solid">
+        <ion-icon slot="end" name="notifications"></ion-icon>
+      </ion-button> 
+    </ion-buttons>
+  </ion-toolbar>
 
   <div class="profile">
     <ion-icon name="person-circle-sharp"></ion-icon>
@@ -14,12 +26,12 @@
   <div class="options-bar">
     <div id="first">
       <ion-icon name="body-sharp"></ion-icon>
-      <span>MEU CORPO</span>
+      <span> MEU CORPO</span>
     </div>
 
     <div id="second">
       <ion-icon name="trophy-sharp"></ion-icon>
-      <span>OBJETIVOS E CONQUISTAS</span>
+      <span> OBJETIVOS E CONQUISTAS</span>
     </div>
   </div>
-</header>
+</ion-header>
