@@ -2,19 +2,23 @@
 
 <ion-content [fullscreen]="true">
   <h2>PERSONAL ONLINE <ion-icon (click)="addProgram()" name="add-circle-outline"></ion-icon></h2>
-
+  
   <div class="card-list">
-    <div class="card-content" *ngFor="let program of programs | async" >
-      <app-card [program]="program" [background]="background"></app-card>
-    </div>
+    <swiper-container [slidesPerView]="1.2" [spaceBetween]="20">
+      <swiper-slide *ngFor="let program of programsCards">
+        <app-card [program]="program" [background]="background"></app-card>
+      </swiper-slide>
+    </swiper-container>
   </div>
 
   <h2>PROGRAMAS <div *ngIf="hasNewProgram">NOVO</div></h2>
 
   <div class="card-list">
-    <div class="card-content" *ngFor="let program of programs | async" >
-      <app-card [program]="program" [background]="background"></app-card>
-    </div>
+    <swiper-container [slidesPerView]="1.2" [spaceBetween]="20">
+      <swiper-slide *ngFor="let program of programsCards">
+        <app-card [program]="program" [background]="background"></app-card>
+      </swiper-slide>
+    </swiper-container>
   </div>
   
 </ion-content>
