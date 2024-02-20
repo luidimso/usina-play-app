@@ -89,7 +89,9 @@ export class HomePage implements OnInit {
                 status: "Novo"
               }
 
-              this.programService.addProgram(body);
+              this.programService.addProgram(body).then(() => {
+                window.location.reload();
+              });
             };
           }
         }
